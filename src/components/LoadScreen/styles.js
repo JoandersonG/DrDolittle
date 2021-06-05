@@ -1,4 +1,30 @@
 import {StyleSheet} from 'react-native';
+import styled from 'styled-components';
+
+// const Button = styled.button`
+//   background: #ff6600;
+//   border-radius: 3px;
+//   border: 2px solid palevioletred;
+//   color: palevioletred;
+//   margin: 0 1em;
+//   padding: 0.25em 1em;
+//   transition: all 0.8s;
+// `;
+
+// const ButtonContainer = styled.TouchableOpacity`
+//     width: 100px;
+//     height: 40px
+//     padding: 12px;
+//     border-radius: 10px;    
+//     background-color: ${props => props.backgroundColor};
+// `;
+
+// const ButtonText = styled.Text`
+//     font-size: 15px;
+//     color: ${props => props.textColor};
+//     text-align: center;
+// `;
+
 
 const styles = StyleSheet.create({
     container: {
@@ -6,6 +32,13 @@ const styles = StyleSheet.create({
       justifyContent: 'center',
       alignItems: 'center',
     },
+
+    logo: {
+      width: 210,
+      height: 120,
+      marginBottom: 15
+    },
+
     texto1:{
       color: '#f8f8ff',
       fontSize: 24,
@@ -35,20 +68,15 @@ const styles = StyleSheet.create({
     button: {
       width: 300,
       height: 42,
-      backgroundColor: '#5599ff',
+      backgroundColor: '#ff6600',
       marginTop: 10,
-      borderRadius: 5,
+      borderRadius: 20,
       alignItems: 'center',
       justifyContent: 'center',
    
     },
 
-    logo: {
-      width: 150,
-      height: 150,
-      borderRadius: 80,
-      marginBottom: 15
-    },
+     
 
     input:{
       marginTop: 10,
@@ -95,4 +123,4 @@ const styles = StyleSheet.create({
   });
 
   //make this component available to the app
-  export default styles ;
+  export {styles} ;

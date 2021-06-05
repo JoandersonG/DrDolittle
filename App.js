@@ -4,14 +4,14 @@ import { createDrawerNavigator } from "react-navigation-drawer";
 import { createStackNavigator } from "react-navigation-stack";
 
 import Home from "./src/components/HomeScreen";
-import Profile from "./src/components/ProfileScreen";
-import Login from "./src/components/LoginScreen";
+import AnimalInfo from "./src/components/AnimalInfoScreen";
+import Load from "./src/components/LoadScreen";
 import Register from "./src/components/RegisterScreen";
 
 const MainDrawer = createDrawerNavigator(
   {
+    AnimalInfo: AnimalInfo,
     Home: Home,
-    Profile: Profile,
   },
   {
     //Prop
@@ -28,20 +28,18 @@ const MainDrawer = createDrawerNavigator(
 );
 
 const AppNavigator = createStackNavigator({
-  Login: {
-    screen: Login,
+  Drawer: {
+    screen: MainDrawer,
+    
+  },
+  Load: {
+    screen: Load,
     navigationOptions: {
       headerShown: false,
     },
   },
   Register: {
     screen: Register,
-  },
-  Drawer: {
-    screen: MainDrawer,
-    navigationOptions: {
-      headerShown: false,
-    },
   },
 });
 
