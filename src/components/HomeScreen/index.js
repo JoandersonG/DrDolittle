@@ -4,12 +4,9 @@ import {
   Text,
   View,
   Image,
-  TextInput,
   TouchableOpacity,
-  Alert,
-  ImageBackground,
 } from "react-native";
-import { styles, Title } from "./styles";
+import { styles } from "./styles";
 
 const HomeScreen = ({ navigation }) => {
   return (
@@ -19,15 +16,21 @@ const HomeScreen = ({ navigation }) => {
         style={styles.logo}
       />
       <Text style={styles.animalDoDiaTitle}>Animal do Dia</Text>
-      <View style={styles.animalDoDiaView}>
+      <TouchableOpacity style={styles.animalDoDiaView}
+        onPress={() => {
+          navigation.navigate('Descubra Animais') 
+        }}>
         <Text style={styles.animalDoDiaName}>Suricato</Text>
         <Image
           source={require("../../../src/image/animal1.jpg")}
           style={styles.animalDoDiaImage}
         />
-      </View>
+      </TouchableOpacity>
 
-      <TouchableOpacity style={styles.animalCategoriaView}>
+      <TouchableOpacity style={styles.animalCategoriaView}
+        onPress={() => {
+          navigation.navigate('Descubra Animais') 
+        }}>
         <Image
           source={require("../../../src/image/dog.png")}
           style={styles.animalCategoriaImagem}
@@ -35,7 +38,10 @@ const HomeScreen = ({ navigation }) => {
         <Text style={styles.animalCategoriaTitulo}>Animais Domésticos</Text>
       </TouchableOpacity>
 
-      <TouchableOpacity style={styles.animalSilvestreView}>
+      <TouchableOpacity style={styles.animalSilvestreView}
+        onPress={() => {
+          navigation.navigate('Descubra Animais') 
+        }}>
         <Image
           source={require("../../../src/image/lion.png")}
           style={styles.animalCategoriaImagem}
@@ -44,7 +50,10 @@ const HomeScreen = ({ navigation }) => {
       </TouchableOpacity>
 
       <View style={styles.horizontal}>
-        <TouchableOpacity style={styles.animalPerigosoView}>
+        <TouchableOpacity style={styles.animalPerigosoView}
+        onPress={() => {
+          navigation.navigate('Descubra Animais') 
+        }}>
           <Image
             source={require("../../../src/image/snake.png")}
             style={styles.animalPerigosoImagem}
@@ -52,7 +61,10 @@ const HomeScreen = ({ navigation }) => {
           <Text style={styles.animalCategoriaHorizontalTitulo}>Animais{'\n'}Perigosos</Text>
         </TouchableOpacity>
 
-        <TouchableOpacity style={styles.animalExtintoView}>
+        <TouchableOpacity style={styles.animalExtintoView}
+        onPress={() => {
+          navigation.navigate('Descubra Animais') 
+        }}>
           <Image
             source={require("../../../src/image/dinossaur.jpg")}
             style={styles.animalExtintoImagem}

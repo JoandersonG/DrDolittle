@@ -29,7 +29,7 @@ const LoadScreen = ({ navigation }) => {
           <TouchableOpacity
             style={styles.button}
             onPress={() => {
-              navigation.navigate("Home", { email: email });
+              navigation.navigate("Tela Inicial");
             }}
           >
             <Text style={styles.buttonText}>Acessar</Text>

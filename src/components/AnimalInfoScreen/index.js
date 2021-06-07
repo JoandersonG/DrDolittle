@@ -1,18 +1,10 @@
 import "react-native-gesture-handler";
-import React, { Component, useState } from "react";
-import {
-  Text,
-  View,
-  Image,
-  TextInput,
-  TouchableOpacity,
-  Alert,
-  ImageBackground,
-} from "react-native";
+import React, { useState } from "react";
+import { Text, View, Image, TouchableOpacity } from "react-native";
 import styles from "./styles";
 
 const AnimalInfoScreen = ({ navigation }) => {
-  const [animalScientificName, setAnimalScientificName] = useState();
+  //const [animalScientificName, setAnimalScientificName] = useState();
 
   return (
     <View style={styles.container}>
@@ -20,6 +12,15 @@ const AnimalInfoScreen = ({ navigation }) => {
         source={require("../../../src/image/animal2.jpg")}
         style={styles.image}
       />
+
+      <TouchableOpacity
+        style={styles.closeButton}
+        onPress={() => {
+          navigation.navigate('Tela Inicial');
+        }}
+      >
+        <Text style={styles.closeButtonText}>X</Text>
+      </TouchableOpacity>
 
       <View style={styles.animalDetailsView}>
         <Text style={styles.detailsText}>
@@ -45,14 +46,14 @@ const AnimalInfoScreen = ({ navigation }) => {
         </Text>
 
         <View style={styles.horizontal}>
-        <TouchableOpacity style={styles.proximoAnimalButton}>
-          <Text style={styles.buttonText}>Próximo Animal</Text>
-        </TouchableOpacity>
+          <TouchableOpacity style={styles.proximoAnimalButton}>
+            <Text style={styles.buttonText}>Animal Anterior</Text>
+          </TouchableOpacity>
 
-        <TouchableOpacity style={styles.proximoAnimalButton}>
-          <Text style={styles.buttonText}>Animal Anterior</Text>
-        </TouchableOpacity>
-      </View>
+          <TouchableOpacity style={styles.proximoAnimalButton}>
+            <Text style={styles.buttonText}>Próximo Animal</Text>
+          </TouchableOpacity>
+        </View>
       </View>
     </View>
   );
