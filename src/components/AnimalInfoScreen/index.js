@@ -4,45 +4,59 @@ import { Text, View, Image, TouchableOpacity } from "react-native";
 import styles from "./styles";
 
 const AnimalInfoScreen = ({ navigation }) => {
-  //const [animalScientificName, setAnimalScientificName] = useState();
+  var nome = navigation.getParam("nome");
+  var nomeCientifico = navigation.getParam("nomeCientifico");
+  var imagePath = navigation.getParam("imagePath");
+  var detalhes = navigation.getParam("detalhes");
+  var alimentos = navigation.getParam("alimentos");
+  var ondeVive = navigation.getParam("ondeVive");
+  var curiosidades = navigation.getParam("curiosidades");
+
+  //placeholder
+  if (nome == null || nome == "") {
+    nome = "Hipopótamo";
+    nomeCientifico = "Hippopotamus amphibius";
+    imagePath = require("../../../src/image/animal4.jpg");
+    detalhes =
+      "O hipopótamo-comum ou hipopótamo-do-nilo é um mamífero Omnívoro";
+    alimentos = "Comem dezenas de quilos de plantas por dia";
+    ondeVive = " África subsariana";
+    curiosidades =
+      "São considerados os mamíferos mais perigosos do planeta. Calcula-se que 500 pessoas morrem anualmente devido a seus ataques.";
+  }
 
   return (
     <View style={styles.container}>
-      <Image
-        source={require("../../../src/image/animal2.jpg")}
-        style={styles.image}
-      />
+      <Image source={imagePath} style={styles.image} />
 
       <TouchableOpacity
         style={styles.closeButton}
         onPress={() => {
-          navigation.navigate('Tela Inicial');
+          navigation.navigate("Tela Inicial");
         }}
       >
         <Text style={styles.closeButtonText}>X</Text>
       </TouchableOpacity>
 
       <View style={styles.animalDetailsView}>
+        <Text style={styles.animalName}>{nome}</Text>
+
         <Text style={styles.detailsText}>
-          <Text style={styles.detailsTitle}>Nome Científico: </Text>Sarcophilus
-          harrisii
+          <Text style={styles.detailsTitle}>Nome Científico: </Text>
+          {nomeCientifico}
+        </Text>
+        <Text style={styles.detailsText}>{detalhes}</Text>
+        <Text style={styles.detailsText}>
+          <Text style={styles.detailsTitle}>Onde é encontrado: </Text>
+          {ondeVive}
         </Text>
         <Text style={styles.detailsText}>
-          Mamífero marsupial da família Dasyuridae endêmico da ilha da Tasmânia{" "}
+          <Text style={styles.detailsTitle}>O que come: </Text>
+          {alimentos}
         </Text>
         <Text style={styles.detailsText}>
-          <Text style={styles.detailsTitle}>Onde é encontrado: </Text>Austrália
-        </Text>
-        <Text style={styles.detailsText}>
-          <Text style={styles.detailsTitle}>O que come: </Text> um animal
-          carnívoro que se alimenta de diferentes espécies de pequeno porte como
-          coelhos, cobras, larvas de insetos, ovos de pássaros e animais mortos
-        </Text>
-        <Text style={styles.detailsText}>
-          <Text style={styles.detailsTitle}>Curiosidades: </Text>Esse mamífero
-          ficou famoso com o personagem infantil Taz. As fêmeas normalmente são
-          maiores do que os machos. Estima-se que o diabo da Tasmânia come o
-          correspondente a cerca de 15% do peso de seu corpo diariamente.
+          <Text style={styles.detailsTitle}>Curiosidades: </Text>
+          {curiosidades}
         </Text>
 
         <View style={styles.horizontal}>

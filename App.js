@@ -9,9 +9,7 @@ import Load from "./src/components/LoadScreen";
 const MainDrawer = createDrawerNavigator(
   {
     'Tela Inicial': Home,
-    'Descubra Animais': AnimalInfo,    
-    
-    
+    'Descubra Animais': AnimalInfo,
   },
   {
     contentOptions: {
@@ -24,19 +22,18 @@ const MainDrawer = createDrawerNavigator(
 );
 
 const AppNavigator = createStackNavigator({
-  Drawer: {
-    screen: MainDrawer,
-    navigationOptions: {
-      headerShown: false,
-    },
-  },
   Load: {
     screen: Load,
     navigationOptions: {
       headerShown: false,
     },
   },
-  
+  Drawer: {
+    screen: MainDrawer,
+    navigationOptions: {
+      headerShown: false,
+    },
+  },  
 });
 
 //make this component available to the app

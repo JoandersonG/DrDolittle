@@ -39,6 +39,14 @@ const styles = StyleSheet.create({
     padding: 15,
   },
 
+  animalName: {
+    color: 'white',
+    width: '500',
+    fontSize: 24,
+    marginBottom: 15,
+    alignSelf: 'center'
+  },
+
   detailsText: {
     color: "white",
     fontSize: 16,
